@@ -1,5 +1,12 @@
 {
-    "name": "invest-bot",
+    "name": "invest_bot",
     "version": "1.0.0",
-    "description": ""
+    "scripts": {
+        "client": "cd client && yarn start",
+        "server": "node ./server/server.js"
+    },
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "express": "^4.17.1"
+    }
 }

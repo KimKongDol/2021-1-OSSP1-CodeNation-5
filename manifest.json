@@ -9,7 +9,7 @@
     "permissions": ["storage", "activeTab", "scripting"],
     "action": {
         "default_title": "자료조사 봇",
-        "default_popup": "popup.html",
+        "default_popup": "./client/popup.html",
         "default_icon": {
             "16": "/images/outline_pageview_black_1.png",
             "32": "/images/outline_pageview_black_2.png",
