@@ -1,1 +1,1 @@
-// 백그라운드에서 참조할 파일
+const mongoose = require('mongoose');
