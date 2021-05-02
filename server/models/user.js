@@ -6,7 +6,7 @@ const userSchema = mongoose.Schema({
         maxlength: 50
     },
 
-    teams: {
+    projects: {
         type: [String]
     },
 
