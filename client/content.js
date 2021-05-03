@@ -1,12 +1,22 @@
-//console.log("SeongMin's Part");
 
-function urlSelected(e) {
-    console.log('url select');
-    var selectedText = window.getSelection().toString(); //선택된 url을 String으로 바꿀 것
-    console.log(selectedText);
+window.extention_save=(e) =>{
+    console.log(e.currentTarget.src);
+    alert(e.currentTarget.src);
+    e.preventDefault();
 }
 
-window.addEventListener('mouseup',urlSelected); //마우스 클릭시 urlSelect함수 실행
+function active(){
+    const img = document.getElementsByTagName("img");
+    for (let i=0; i< img.length; i++){
+        img[i].addEventListener("click",window.extention_save);
+    }
+}
 
+function deActive(){
+    const img = document.getElementsByTagName("img");
+    for (let i=0; i<img.length; i++){
+        img[i].removeEventListener("click",window.extension_save)
+    }
+}
 
-
+active();
