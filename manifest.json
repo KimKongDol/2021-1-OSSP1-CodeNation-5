@@ -4,7 +4,8 @@
     "version": "1.0",
     "manifest_version": 3,
     "background": {
-        "service_worker": "background.js"
+        "service_worker": "background.js" 
+       
     },
     "permissions": ["storage", "activeTab", "scripting"],
     "action": {
@@ -20,5 +21,12 @@
         "16": "/images/outline_pageview_black_1.png",
         "32": "/images/outline_pageview_black_2.png",
         "64": "/images/outline_pageview_black_2.png"
-      }
+      },
+    
+     "content_scripts": [
+         {
+         "matches":["<all_urls>"],
+         "js":["/client/content.js"]
+         }
+     ]
 }
