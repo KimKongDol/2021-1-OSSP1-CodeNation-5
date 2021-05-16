@@ -1,7 +1,7 @@
 const bodyParser = require('body-parser');
 const express = require('express'); //express 프레임워크 사용합니다.
 const app = express();
-const port = process.env.port || 5000; //서버의 포트번호를 지정해줍니다. 5000번에서 확인할 수 있습니다.
+const port = process.env.port || 8000; //서버의 포트번호를 지정해줍니다. 5000번에서 확인할 수 있습니다.
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended : true}));

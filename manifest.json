@@ -2,12 +2,13 @@
     "name": "자료 조사 봇",
     "description": "공개 SW 프로젝트 5번째 팀 CODENATION 입니다.",
     "version": "1.0",
-    "manifest_version": 3,
+    "manifest_version": 2,
     "background": {
-        "service_worker": "background.js"
+        "scripts": ["background.js"]
     },
-    "permissions": ["storage", "activeTab", "scripting"],
-    "action": {
+    "content_security_policy": "script-src 'self' https://apis.google.com; object-src 'self'",
+    "permissions": ["identity", "storage", "activeTab"],
+    "browser_action": {
         "default_title": "자료조사 봇",
         "default_popup": "./client/popup.html",
         "default_icon": {
@@ -20,5 +21,11 @@
         "16": "/images/outline_pageview_black_1.png",
         "32": "/images/outline_pageview_black_2.png",
         "64": "/images/outline_pageview_black_2.png"
-      }
+    },
+    "oauth2": {
+		"client_id": "288589461104-7vc6fqciqf20j3l5r70lmehiab1r7ror.apps.googleusercontent.com",
+		"scopes": [
+			"https://www.googleapis.com/auth/drive"
+		]
+	}
 }
