@@ -13,7 +13,7 @@ def pdf_to_txt(path):
     raw_pdf = parser.from_file(pdf_path) 
     result = raw_pdf['content'] 
     result = result.strip()
-    print(result)
+    #print(result)
     return result
 
 
@@ -27,7 +27,7 @@ def ppt_to_txt(path):
                 continue
             for paragraph in shape.text_frame.paragraphs:
                 result.append(paragraph.text)
-    print(result)
+    #print(result)
     return result
 
 
@@ -37,14 +37,14 @@ def hwp_to_txt(path):
     hwp_file = olefile.OleFileIO(path)
     hwp_txt = hwp_file.openstream('Prvtext').read()
     result = hwp_txt.decode('UTF=16')
-    print (result)
+    #print (result)
     return result
 
 
 # word to txt
 def word_to_txt(path):
     result = docx2txt.process(path)
-    print(result)
+    #print(result)
     return result
 
 
