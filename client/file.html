@@ -19,13 +19,23 @@
                 <div id="user">User</div> <!-- 유저 이름 넣는 칸 -->
                 <div id="team">* CodeNation</div><!-- 유저가 속한 팀명? 연동된 계정들 넣는 칸 -->
             </div>
-            <div id="fileBox">
-                <div class="left_file"></div> <!-- 파일 칸 -->
+            <button
+                class="btn btn-second"
+                id="btn_target"
+                type="button"
+                data-toggle="collapse"
+                data-target=".collapse"
+                data-text="Collapse">
+            저장한 자료 열람 ▼
+            </button>
+            <div class="block collapse">
+                <div>자료채워넣기~</div>
             </div>
         </div>
         <div id="rightSection" class="d-inline-flex">
             <div class="right_file">hello</div>
         </div>
     </section>
+    <script src="script.js"></script>
 </body>
 </html>

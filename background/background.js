@@ -1,25 +1,23 @@
-const API_KEY = 'AIzaSyA2lbpRU4mEOazqHuRyHNZfIv3fFBvrPR8';
-const DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"];
+const API_KEY = 'AIzaSyCYzO2cRtI0XnpMAU6kvSGAYp-wGFLEThU';
+const DISCOVERY_DOCS = ['https://www.googleapis.com/discovery/v1/apis/drive/v3/rest'];
 
-let user_signed_in = false;
-
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-    if(request.message === 'get_access_token')
-    {
-        chrome.identity.getAuthToken({interactive: true}, function(token) {
-            console.log(token);
-        });
-        sendResponse({signed_in: true});
-    }
-
-    else if(request.message === 'get_profile')
-    {
-        var email;
-        chrome.identity.getProfileUserInfo({accountStatus: 'ANY'}, function(user_info) {
-            console.log(user_info);
-            email = user_info.email;
-        });
-        console.log(email);
-        sendResponse({email});
-    }
-});
+function onGapiLoad() {
+    gapi.client
+        .init({
+            apiKey: API_KEY,
+            discoveryDocs: DISCOVERY_DOCS,
+        })
+        .then(
+            function () {
+                console.log('gapi init success');
+                chrome.identity.getAuthToken({ interactive: true }, function (token) {
+                    gapi.auth.setToken({
+                        access_token: token,
+                    });
+                });
+            },
+            function (error) {
+                console.log('gapi init fail', error);
+            }
+        );
+}
