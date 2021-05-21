@@ -2,13 +2,28 @@
     "name": "자료 조사 봇",
     "description": "공개 SW 프로젝트 5번째 팀 CODENATION 입니다.",
     "version": "1.0",
-    "manifest_version": 3,
+    "manifest_version": 2,
     "background": {
-        "service_worker": "background.js" 
-       
+        "page": "background/background.html",
+        "persistent": false
     },
-    "permissions": ["storage", "activeTab", "scripting"],
-    "action": {
+    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAn6VkI5xf/2c0wSImKPkpyi/+PrOsT+ZLvcQH+cgbt8Sthm3Q4nHuZCdIEWpub4SIFO1gM0wTt3aBn1+ymsoYN0jNDLh6F7fL55onpkvtjDS98j49Otex3NM/IcHUUF/Qq3vrSxPteXzM3fwFWAR3E3D4bGzJY+E+EENMX4o3j3ZElo8YLI/doJI6/fhaUs+siByi64RuTjHbgvkGin0XaSrMmx1q876F5TepI5asiMxKjuP8rGugkb86Xhtk8MwF/N70YJuqUgQxT3gTaGKLxRj+3Jhhmx2yN9vb6boWQwSslw02JyESPDDmnTRDfMxs8dtDr/SC3N9jWGHYSOm3wwIDAQAB",
+    "oauth2": {
+		"client_id": "288589461104-of3d469gvd69mul31gi479euudntuoo6.apps.googleusercontent.com",
+		"scopes": [
+            "profile email",
+			"https://www.googleapis.com/auth/drive"
+		]
+	},
+    "content_security_policy": "script-src 'self' https://apis.google.com; object-src 'self'",
+    "permissions": [
+        "tabs", 
+        "identity",
+        "identity.email", 
+        "storage", 
+        "activeTab"
+    ],
+    "browser_action": {
         "default_title": "자료조사 봇",
         "default_popup": "./client/popup.html",
         "default_icon": {
@@ -21,16 +36,5 @@
         "16": "/images/outline_pageview_black_1.png",
         "32": "/images/outline_pageview_black_2.png",
         "64": "/images/outline_pageview_black_2.png"
-      },
-    
-     "content_scripts": [
-         {
-         "matches":["<all_urls>"],
-         "js":["/client/content.js"]
-         }
-     ]
-
-
-    
-
+    }
 }

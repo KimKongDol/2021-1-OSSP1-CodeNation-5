@@ -1,9 +1,17 @@
 # DS_store
-/DS_store
+.DS_store
+/selenium/.DS_store
 
 # node_modules
 /node_modules
 
+
 # Lib
 /selenium/Lib
 /selenium/Scripts
+
+# selenium
+/selenium/bin
+/selenium/lib
+/selenium/chromedriver
+
